@@ -4,7 +4,15 @@ A minimalistic `sass` breakpoint library for your next project.
 
 ## Installation
 
-The default `breakpoints` are:
+`npm i sassy-lib`
+
+After installation, import the library in your `.scss` file.
+
+`@import 'node_modules/sassy-lib/main.scss';`
+
+## Library defaults
+
+Default breakpoints:
 
 ```sass
 $breakpoints: (
@@ -16,7 +24,10 @@ $breakpoints: (
 );
 ```
 
-> If you need to overwrite the values just define the breakpoint in your `.scss` file and `import` the library after declaring the breakpoint.
+Default `infix` separator (more info at the bottom of the page):
+`$breakpoint-infix-separator: "-";`
+
+> If you need to overwrite the values just define the breakpoint in your `.scss` file and `import` the library after declaring the breakpoint. Any overwrites must come before importing the library.
 
 ```sass
 $breakpoints: (
