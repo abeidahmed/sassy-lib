@@ -64,3 +64,49 @@ To use any of these directions (default is `up`), you need to `include` the brea
 
 // Same as @media (min-width: 640px and max-width: 767.98px) {}
 ```
+
+## Creating utility classes
+
+Sassy-lib also provides a powerful `api` called `$bp-sort` that you can use to create your utility classes.
+
+```sass
+$displays: (
+  flex: flex,
+  block: block,
+);
+
+// $breakpoints is your key-value pair of breakpoint map
+
+@each $breakpoint in map-keys($breakpoints) {
+  // provided by the library
+  $bp-sort: breakpoint-infix($breakpoint);
+
+  @include breakpoint($breakpoint) {
+    @each $prop, $value in $displays {
+      .#{$bp-sort}#{$prop} {
+        display: $value;
+      }
+    }
+  }
+}
+
+// creates
+.flex {
+  display: flex;
+}
+
+@media (min-width: 640px) {
+  .sm-flex {
+    display: flex;
+  }
+}
+
+// etc
+// Note: Please use the $bp-sort before your class.
+```
+
+The default `infix` separator is "-", but you can overwrite by overwriting the `$infix-separator` variable.
+
+## Tip
+
+You can also create TailwindCSS like `classes` by overwriting the `$infix-separator` value to `$infix-separator: "\\:"`, which will generate `classes` similar to TailwindCSS.
