@@ -25,7 +25,10 @@ $breakpoints: (
 ```
 
 Default `infix` separator (more info at the bottom of the page):
-`$breakpoint-infix-separator: "-";`
+
+```sass
+$breakpoint-infix-separator: "-";
+```
 
 > If you need to overwrite the values just define the breakpoint in your `.scss` file and `import` the library after declaring the breakpoint. Any overwrites must come before importing the library.
 
@@ -122,4 +125,4 @@ The default `infix` separator is "-", but you can overwrite by overwriting the `
 
 ## Tip
 
-You can also create [TailwindCSS](https://tailwindcss.com/) like `classes` by overwriting the `$breakpoint-infix-separator` value to `$breakpoint-infix-separator: "\\:"`, which will generate `classes` similar to TailwindCSS.
+You can also create [TailwindCSS](https://tailwindcss.com/) like `classes` by overwriting the `$breakpoint-infix-separator` value to `$breakpoint-infix-separator: "\\:"`, which will generate similar `classes`.
