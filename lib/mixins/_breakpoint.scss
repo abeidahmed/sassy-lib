@@ -42,7 +42,11 @@
 }
 
 @function breakpoint-infix($breakpoint-name, $bp: $breakpoints) {
-  @return if(breakpoint-min($breakpoint-name, $bp) == null, '', '#{$breakpoint-name}\\:');
+  @return if(
+    breakpoint-min($breakpoint-name, $bp) == null,
+    '',
+    '#{$breakpoint-name}#{$infix-separator}'
+  );
 }
 
 /// @param {number} $number - 24px, 32px etc
