@@ -28,6 +28,8 @@ $breakpoints: (
 );
 
 @import 'node_modules/sassy-lib/main.scss';
+
+// Note: The first value in the $breakpoints map should be 0.
 ```
 
 ## Usage
