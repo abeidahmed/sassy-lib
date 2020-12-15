@@ -8,7 +8,7 @@
 /// Inspired by Bootstrap
 /// @link https://getbootstrap.com/
 
-@function graspcss-next($breakpoint-name, $bp: $breakpoints) {
+@function sassy-next($breakpoint-name, $bp: $breakpoints) {
   $gbp: map-keys($bp);
   $i: index($gbp, $breakpoint-name);
 
@@ -32,7 +32,7 @@
 /// @link https://getbootstrap.com/
 
 @function breakpoint-max($breakpoint-name, $bp: $breakpoints) {
-  $next: graspcss-next($breakpoint-name, $bp);
+  $next: sassy-next($breakpoint-name, $bp);
 
   @if $next {
     @return breakpoint-min($next, $bp) - 0.02;
@@ -71,7 +71,7 @@
   }
   // @media (max-width: some-width) {}
   @else if $direction == 'down' {
-    $next: graspcss-next($breakpoint-name, $bp);
+    $next: sassy-next($breakpoint-name, $bp);
 
     @return breakpoint-max($breakpoint-name, $bp);
   }
