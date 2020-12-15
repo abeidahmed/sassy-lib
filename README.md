@@ -73,13 +73,11 @@ To use any of these directions (default is `up`), you need to `include` the brea
 @include breakpoint(sm, down) {
   // your styles
 }
-
 // Same as @media (max-width: 639.98px) {}
 
 @include breakpoint(sm, only) {
   // your styles
 }
-
 // Same as @media (min-width: 640px and max-width: 767.98px) {}
 ```
 
