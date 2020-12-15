@@ -1,8 +1,8 @@
 {
   "name": "sassy-lib",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A minimalistic sass breakpoint library.",
+  "main": "./main.scss",
   "keywords": [
     "sass",
     "sass-breakpoint",
@@ -10,5 +10,9 @@
     "breakpoint-mixin"
   ],
   "author": "Abeid Ahmed",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abeidahmed/sassy-lib.git"
+  }
 }
