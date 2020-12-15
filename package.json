@@ -1,0 +1,14 @@
+{
+  "name": "sassy-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "sass",
+    "sass-breakpoint",
+    "breakpoint",
+    "breakpoint-mixin"
+  ],
+  "author": "Abeid Ahmed",
+  "license": "MIT"
+}
