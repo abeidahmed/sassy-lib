@@ -45,7 +45,7 @@
   @return if(
     breakpoint-min($breakpoint-name, $bp) == null,
     '',
-    '#{$breakpoint-name}#{$infix-separator}'
+    '#{$breakpoint-name}#{$breakpoint-infix-separator}'
   );
 }
 

@@ -69,7 +69,7 @@ To use any of these directions (default is `up`), you need to `include` the brea
 
 ## Creating utility classes
 
-Sassy-lib also provides a powerful `api` called `$bp-sort` that you can use to create your utility classes.
+Sassy-lib also provides a powerful `api` called `breakpoint-infix` that you can use to create your utility classes.
 
 ```sass
 $displays: (
@@ -107,8 +107,8 @@ $displays: (
 // Note: Please use the $bp-sort before your class.
 ```
 
-The default `infix` separator is "-", but you can overwrite by overwriting the `$infix-separator` variable.
+The default `infix` separator is "-", but you can overwrite by overwriting the `$breakpoint-infix-separator` variable.
 
 ## Tip
 
-You can also create TailwindCSS like `classes` by overwriting the `$infix-separator` value to `$infix-separator: "\\:"`, which will generate `classes` similar to TailwindCSS.
+You can also create TailwindCSS like `classes` by overwriting the `$breakpoint-infix-separator` value to `$breakpoint-infix-separator: "\\:"`, which will generate `classes` similar to TailwindCSS.
