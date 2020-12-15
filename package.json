@@ -1,7 +1,7 @@
 {
   "name": "sassy-lib",
   "version": "1.0.0",
-  "description": "A minimalistic sass breakpoint library.",
+  "description": "A minimalistic sass breakpoint library for your next project.",
   "main": "main.scss",
   "keywords": [
     "sass",
