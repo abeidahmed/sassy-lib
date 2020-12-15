@@ -27,7 +27,7 @@ $breakpoints: (
   xl: 1280px,
 );
 
-@import sassy-lib
+@import 'node_modules/sassy-lib/main.scss';
 ```
 
 ## Usage
