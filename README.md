@@ -8,7 +8,9 @@ A minimalistic `sass` breakpoint library for your next project.
 
 After installation, import the library in your `.scss` file.
 
-`@import 'node_modules/sassy-lib/main.scss';`
+`@import './node_modules/sassy-lib/main.scss';`
+
+> Absolute `import`s do not work. You need to `import` it manually.
 
 ## Library defaults
 
@@ -41,7 +43,7 @@ $breakpoints: (
   xl: 1280px,
 );
 
-@import 'node_modules/sassy-lib/main.scss';
+@import './node_modules/sassy-lib/main.scss';
 
 // Note: The first value in the $breakpoints map should be 0.
 ```
