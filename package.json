@@ -11,6 +11,12 @@
   ],
   "author": "Abeid Ahmed",
   "license": "MIT",
+  "files": [
+    "lib",
+    "main.scss",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/abeidahmed/sassy-lib"
