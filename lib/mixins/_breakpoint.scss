@@ -34,12 +34,11 @@
 @function breakpoint-max($breakpoint-name, $bp: $breakpoints) {
   $next: sassy-next($breakpoint-name, $bp);
 
-  @if $next {
-    @return breakpoint-min($next, $bp) - 0.02;
-  }
-
-  @return null;
+  @return if($next, breakpoint-min($next, $bp) - 0.02, null);
 }
+
+/// Inspired by Bootstrap's breakpoint mixin
+/// @link https://getbootstrap.com/
 
 @function breakpoint-infix($breakpoint-name, $bp: $breakpoints) {
   @return if(
@@ -49,26 +48,16 @@
   );
 }
 
-/// @param {number} $number - 24px, 32px etc
-/// @returns {number} $number - 1em, 2.5em, etc
-
-@function sassy-strip($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-
-  @return $number;
-}
-
 /// @param {breakpoint-name} $breakpoint-name - sm, md, lg, xl
 /// @param {direction} $direction - up, down, only
-/// @returns {breakpoints} breakpoints-map consisting of key-value pairs
+/// @param {breakpoints} $bp - map of breakpoints key-value pairs
+///
+/// @returns {media-queries} min-width, max-width, or both
 
 @function breakpoint($breakpoint-name, $direction, $bp: $breakpoints) {
   $str: '';
   $rtd: '';
   $rtu: '';
-  $bp: sassy-strip($bp);
   // @media (min-width: some-width) {}
   @if $direction == 'up' {
     @return breakpoint-min($breakpoint-name, $bp);
@@ -102,39 +91,44 @@
 
 /// @param {breakpoint-name} $breakpoint-name - sm, md, lg, xl
 /// @param {direction} $direction - up, down, only
-/// @returns {breakpoints} breakpoints-map consisting of key-value pairs
+/// @param {breakpoints} $bp - map of breakpoints key-value pairs
+///
+/// @returns {media-queries} min-width, max-width, or both
 
 /// @example
-/// @include breakpoint($breakpoint-name, $direction) {
-///   write your css...
+/// .some-class {
+///   @include breakpoint($breakpoint-name, $direction) {
+///     write your css...
+///   }
 /// }
 
 @mixin breakpoint($breakpoint-name, $direction: up, $bp: $breakpoints) {
   $size: breakpoint($breakpoint-name, $direction, $bp);
   $str: breakpoint($breakpoint-name, $direction, $bp);
 
+  // max-width styles
   @if $direction == 'down' {
     @media (max-width: $size) {
       @content;
     }
   }
-  // Min width when min-width != 0
+  // min-width styles when min-width != 0
   @else if $direction == 'up' and $size != null {
     @media (min-width: $size) {
       @content;
     }
   }
-  // Min width when min-width = 0
+  // min-width styles when min-width = 0
   @else if $direction == 'up' and $size == null {
     @content;
   }
-  // Only
+  // min-width and max-width styles
   @else if $direction == 'only' {
     @media #{$str} {
       @content;
     }
   }
-  // Return @content if direction is not set
+  // Return styles if string in empty
   @else if $str == '' {
     @content;
   }
