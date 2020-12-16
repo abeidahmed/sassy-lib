@@ -1,0 +1,15 @@
+@import '../main.scss';
+
+.hello {
+  @include breakpoint(md) {
+    display: flex;
+  }
+
+  @include breakpoint(sm, down) {
+    display: block;
+  }
+
+  @include breakpoint(lg, only) {
+    display: inline-flex;
+  }
+}
