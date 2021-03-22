@@ -54,7 +54,7 @@ The library provides a breakpoint `mixin` which accepts 3 `args`:
 
 - breakpoint name, for example: `sm`, `md`, etc. This is same as your `$breakpoints` `map` key.
 - direction, for example: `up`, `down`, `only`. Further explanation provided below.
-- `$breakpoints` map. The default value is mention on the top of the page. Even if you need to overwrite the default value, consider creating a separate file for your breakpoints as mentioned above.
+- `$breakpoints` map. The default value is mentioned on top of the page. Even if you need to overwrite the default value, consider creating a separate file for your breakpoints as mentioned above.
 
 The library handles 3 directions, namely:
 
@@ -118,7 +118,7 @@ $displays: (
 }
 
 // etc
-// Note: Please use the $bp-sort before your class.
+// Note: Please use $bp-sort before declaring your class name.
 ```
 
 The default `infix` separator is "-", but you can overwrite by overwriting the `$breakpoint-infix-separator` variable.
